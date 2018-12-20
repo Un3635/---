@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  
+</body>
+<script>
+  function test() {
+    var i = 0;
+    for(var j = 0; j < 10; j++){}
+    console.log(j); // j 是可以被访问到的
+  }
+  test();
+  var i = 0;
+  if(true) {
+    var test = 10;
+  }
+  console.log('test', test);
+</script>
+</html>

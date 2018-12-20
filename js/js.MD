@@ -164,5 +164,8 @@ instanceof typeof constructor Object.prototype.toString.call();
  代码见 js/双向绑定.js
 
 
+#### 使用js 数组去重的方法
+ 代码见 js/获取数组中的最大，最小值以及常用数组的操作.js
+
 
 
