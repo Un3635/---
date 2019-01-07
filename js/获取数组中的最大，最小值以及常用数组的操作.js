@@ -94,7 +94,7 @@ const uniq5 = (array) => {
 const uniq6 = (array) => {
   return Array.from(new Set(array));
 }
-// console.log('uniq6', uniq6(arr))
+console.log('uniq6', uniq6(arr))
 
 // 7 新旧数组的对比
 
@@ -166,7 +166,7 @@ console.log('reduce-value', value);
 
 // filter
 var arr3 = arr.filter(item => {
-  return item > 2;
+  return item ;
 })
 arr3[0] = 'name';
 console.log('filter-arr3', arr3, arr); // 是找到所有符合条件的，并且是一个新的数组
@@ -182,8 +182,8 @@ console.log('find-arr4', arr4, arr); // arr4 是找到第一个符合条件 之�
 
 // some
 var arr5 = arr.some(item => {
-  if(item > 10) return item;
-  // return item;
+  // if(item > 10) return item;
+  return item;
 })
 console.log('some-arr5', arr5, arr); // arr5  只要有一个满足条件就返回true， 否则就是 false
 

@@ -1,0 +1,147 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* .parent {
+    overflow: hidden;
+    zoom: 1;
+  }
+
+  .left {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .right {
+    overflow: hidden;
+    zoom: 1;
+  } */
+  /* .parent {
+    display: flex;
+  }
+
+
+
+  .right {
+    flex: 1;
+  } */
+  .parent {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px
+  }
+</style>
+
+<body>
+  <div class="parent" style="background-color: lightgrey;">
+    <div class="left" style="background-color: lightblue;">
+      <p>left</p>
+    </div>
+    <div class="right" style="background-color: lightgreen;">
+      <p>right</p>
+      <p>right</p>
+    </div>
+  </div>
+</body>
+<script>
+// console.log(document.getElementById('box').offsetWidth)
+</script>
+
+</html> -->
+
+<!-- 三列布局 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  html * {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* .layout article div {
+    min-height: 150px;
+  } */
+  .left {
+    float: left;
+    width: 100px;
+    height: 500px;
+    background: #cccccc;
+  }
+
+  .right {
+    float: right;
+    width: 100px;
+    height: 500px;
+    background: gray;
+  }
+
+  .container {
+    /* width: auto; */
+    height: 500px;
+    background: #000000;
+    color: #fff;
+  }
+  .box {
+    width: 400px;
+    height: 200px;
+    background: red;
+  }
+  .box1 {
+    /* margin-top: 30px; */
+    /* margin-left: 35px; */
+    background: blue;
+    /* margin-bottom: 35px; */
+  }
+  .box2 {
+    position: relative;
+    margin-top: 35px;
+    /* top:35px; */
+    background: black;
+    /* width: 30px; */
+    height: 30px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 2px;
+    /* box-sizing: content-box; */
+  }
+</style>
+
+<body>
+  <div class="left"></div>
+  <div class="right"></div>
+  <div class="container">
+      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
+      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
+      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
+      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
+  </div>
+
+  <div class="box">
+    <div class="box1">box1</div>
+    <div class="box2" id="box">box2</div>
+  </div>
+</body>
+<script>
+console.log(document.getElementById('box').offsetHeight);
+
+</script>
+
+</html>
