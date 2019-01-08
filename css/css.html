@@ -122,6 +122,38 @@
     padding: 2px;
     /* box-sizing: content-box; */
   }
+  .inlineBox {
+    display: inline-block;
+    background: pink;
+    width: 300px;
+    *zome: 1;
+    *display: inline;
+
+  }
+  span {
+    display: inline-block;
+    background: pink;
+    width: 100px;
+  }
+  .clearDiv {
+    border: 1px solid black;
+    overflow: hidden;
+    *zoom: 1;
+  
+  }
+  .clearfix {
+    /* 在ie8 下就需要设置 zoom: 1 */
+    *zoom: 1;  
+  }
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .clearDiv div{
+    float: left;
+  }
+  
 </style>
 
 <body>
@@ -137,6 +169,17 @@
   <div class="box">
     <div class="box1">box1</div>
     <div class="box2" id="box">box2</div>
+   
+  </div>
+  <span>内联元素1</span>
+  <span>内联元素2</span>
+  <div class="inlineBox">inline-block-box</div>
+  <div class="inlineBox">inline-block-box</div>
+
+  <div class="clearDiv">
+    <div>jj</div>
+    <!-- <em>hh</em> -->
+    <!-- <br /> -->
   </div>
 </body>
 <script>
