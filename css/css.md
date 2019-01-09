@@ -115,27 +115,6 @@ border background margin padding font[font-style font-weight font-size/line-heig
     1. zoom: !normal
 
 
-#### 五大布局
-1. 单列布局，有以下两种情况
-  - header,content 和 footer 等宽的单列布局 
-  - header 与 footer 等宽,content 略窄的单列布局
-1. 两列自适应布局(两列自适应布局是指一列由内容撑开，另一列撑满剩余宽度的布局方式)
-  - float + overflow:hidden 
-
-     ``.left {float: left;} .right {overflow:hidden}``
-  - flexBox 
-   
-      设置父级 ``display:flex`` 和 ``.right {flex:1}``
-  - Grid布局
-
-1. 三栏布局(特征：中间列自适应宽度，旁边两侧固定宽度，实现三栏布局有多种方式：)
-  - 
-  ```
-  .left {width: 100px; height: 500px; float:left} 
-  .right: {width: 100px; height: 500px; float:right}
-  .container {width: auto; height: 500px;}
-  ```
-
 #### 伪类与伪元素
 
 - 伪类：给元素添加特殊的效果 :link :visited :hover :active :focus :blur
@@ -164,5 +143,3 @@ border background margin padding font[font-style font-weight font-size/line-heig
 
 **扩展**：
 display设置为inline-block的时候，块可以在一排显示，内联也支持宽高, 默认的内容撑开宽度，标签之间的换行间隙被解析（问题）;当元素是内联元素的时候设置inline-block的时候，所有的浏览器都支持；当元素本身就是块状元素的时候，在ie7以下的浏览器都是不支持的原因： IE中对内联元素使用display:inline-block，IE是不识别的，但使用display:inline-block在IE下会触发layout，从而使内联元素拥有了display:inline-block属性的表征。这时块元素仅仅是被display:inline-block触发了layout，而它本身就是行布局，所以触发后，块元素依然还是行布局，而不会如Opera中块元素呈递为内联对象。这时候可以修改为：``div{ display:inline-block;*zoom:1;*display: inline;}``
-
-#### 兼容问题

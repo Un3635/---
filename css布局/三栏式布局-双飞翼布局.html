@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏式布局-双飞翼布局</title>
+  <style>
+    .clearfixer {
+      *zoom: 1;
+    }
+
+    .clearfixer::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .warp {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    #left,
+    #right {
+      width: 200px;
+      height: 500px;
+      float: left;
+      background-color: blue;
+    }
+
+    #left {
+      margin-left: -100%;
+    }
+    #right {
+      margin-left: -200px;
+    }
+    /* 上述#left和#right的设置，可以把 main left right 看成是块状元素的流式布局。只要margin-left设置即可 */
+
+    .main {
+      float: left;
+      width: 100%;
+    }
+
+    #content {
+      height: 500px;
+      background-color: red;
+      margin: 0 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="warp clearfixer">
+    <div class="main">
+      <section id="content">content</section>
+    </div>
+    <!-- 为什么将 aside 放在后面，是因为在css布局种给main设置了宽度是100%，为了方便之后设置css，如果
+    不设置css的样式，可以不用将aside放在后面 -->
+    <aside id="left">left</aside>
+    <aside id="right">right</aside>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏式布局-float</title>
+  <style>
+    .clearfixer {
+      *zoom: 1;
+    }
+    .clearfixer::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .warp {
+      width: 80%;
+      margin: 0 auto;
+    }
+    #left, #right {
+      width: 200px;
+      height: 500px;
+    }
+    #left{
+      float: left;
+      background-color: blue;
+    }
+    #right {
+      float: right;
+      background-color: blue;
+    }
+   #main {
+     width: auto;
+     height: 500px;
+     background-color: red;
+     margin: 0 201px;
+   }
+    
+  </style>
+</head>
+<body>
+  <div class="warp clearfixer">
+    <aside id="left"></aside>
+    <aside id="right"></aside>
+    <section id="main"></section>
+  </div>
+</body>
+</html>
