@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>三栏式布局-圣杯布局</title>
+  <title>等高布局-圣杯布局</title>
   <style>
     .clearfixer {
       *zoom: 1;
@@ -19,6 +19,14 @@
 
     .warp {
       padding: 0 220px 0 220px;
+      overflow: hidden;
+    }
+
+    #left,
+    #right,
+    #main {
+      padding-bottom: 10000px;
+      margin-bottom: -10000px;
     }
 
     #left,
@@ -31,22 +39,22 @@
 
     #left {
       margin-left: -100%;
-      position: relative; 
-      left: -220px; 
+      position: relative;
+      left: -220px;
     }
+
     #right {
       margin-left: -200px;
-      position: relative; 
+      position: relative;
       right: -220px;
     }
 
     #main {
       float: left;
       width: 100%;
-      height: 500px;
+      height: 800px;
       background-color: red;
     }
-
   </style>
 </head>
 

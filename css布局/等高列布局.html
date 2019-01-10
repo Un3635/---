@@ -4,27 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>两列自适应布局-float加overflow</title>
+  <title>等高列布局</title>
 </head>
 <style>
-  .wrap {
-    overflow: hidden;
-    *zoom: 1;
-  }
-  .left {
+  .left, .main, .right {
     float: left;
-    background-color: red;
+    padding-bottom: 10000px;
+    margin-bottom: -10000px;
   }
-  .main {
+  .wrap {
+    width: 80%;
+    margin: 0 auto;
     overflow: hidden;
-    *zoom: 1;
-    background-color: blue;
   }
 </style>
 <body>
   <div class="wrap">
     <aside class="left">left</aside>
     <section class="main">main</section>
+    <aside class="right">right</aside>
   </div>
 </body>
 </html>

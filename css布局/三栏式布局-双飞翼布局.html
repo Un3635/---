@@ -21,12 +21,21 @@
       position: relative;
       width: 80%;
       margin: 0 auto;
+      overflow: hidden;
+    }
+
+    /* 任何一列内容高度增加时，其他两列的高度也进行改变 */
+    #left,
+    #right,
+    #main {
+      padding-bottom: 10000px;
+      margin-bottom: -10000px;
     }
 
     #left,
     #right {
       width: 200px;
-      height: 500px;
+      /* height: 500px; */
       float: left;
       background-color: blue;
     }
@@ -45,21 +54,27 @@
     }
 
     #content {
-      height: 500px;
+      /* height: 500px; */
       background-color: red;
       margin: 0 200px;
+      padding: 30px;
+      word-break: break-all;
     }
   </style>
 </head>
 
 <body>
   <div class="warp clearfixer">
-    <div class="main">
-      <section id="content">content</section>
+    <div class="main" id="main">
+      <section id="content">
+          contentccontentccontentccontentccontentvvccontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontent
+          contentccontentccontentccontentccontentc
+          contentccontentccontentccontentccontentc
+      </section>
     </div>
     <!-- 为什么将 aside 放在后面，是因为在css布局种给main设置了宽度是100%，为了方便之后设置css，如果
     不设置css的样式，可以不用将aside放在后面 -->
-    <aside id="left">left</aside>
+    <aside id="left">let</aside>
     <aside id="right">right</aside>
   </div>
 </body>
