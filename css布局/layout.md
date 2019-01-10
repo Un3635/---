@@ -69,4 +69,18 @@
        ```
 
 1. 粘连布局，也就是sticker footer 布局
+    步骤:
+
+    1. 设置html, body的高度是 100%``html, body{height: 100%}``, 其中一定要设置html的高度，如果只设置body的高度而不设置html的高度，则不回成功；
+    1. 设置wrap的最小高度``.wrap {min-height: 100%}``,其中若需要兼容ie6，则需添加
+    ```css
+    .wrap {
+        min-height: 100%;
+        height: auto !important; /* 如果你不需要考虑IE6，则可以把这行与下一行代码删除 */
+        height: 100%;
+    }
+    ```
+    1. 设置wrap子元素的css样式,添加padding-bottom的样式 ``.main{padding-bottom: footer的高度}``
+    1. 设置footer的样式 ``.footer {height: footer的高度; margin-top: 负的footer的高度}``
+    
 
