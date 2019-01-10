@@ -99,17 +99,20 @@
     background: #000000;
     color: #fff;
   }
+
   .box {
     width: 400px;
     height: 200px;
     background: red;
   }
+
   .box1 {
     /* margin-top: 30px; */
     /* margin-left: 35px; */
     background: blue;
     /* margin-bottom: 35px; */
   }
+
   .box2 {
     position: relative;
     margin-top: 35px;
@@ -122,6 +125,7 @@
     padding: 2px;
     /* box-sizing: content-box; */
   }
+
   .inlineBox {
     display: inline-block;
     background: pink;
@@ -130,46 +134,62 @@
     *display: inline;
 
   }
+
   span {
     display: inline-block;
     background: pink;
     width: 100px;
   }
+
   .clearDiv {
     border: 1px solid black;
     overflow: hidden;
     *zoom: 1;
-  
+
   }
+
   .clearfix {
     /* 在ie8 下就需要设置 zoom: 1 */
-    *zoom: 1;  
+    *zoom: 1;
   }
+
   .clearfix::after {
     content: "";
     display: block;
     clear: both;
   }
-  .clearDiv div{
+
+  .clearDiv div {
     float: left;
   }
-  
+
+  .icon-wrap {
+    border: 1px solid #ddd;
+  }
+  .icon-wrap img {
+    width: 100px;
+    float: left;
+  }
 </style>
 
 <body>
   <div class="left"></div>
   <div class="right"></div>
   <div class="container">
-      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
-      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
-      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
-      n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount by which one thing is greater than another
+    n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount
+    by which one thing is greater than another
+    n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount
+    by which one thing is greater than another
+    n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount
+    by which one thing is greater than another
+    n.(名词)[C]页边空白 blank space round the written or printed matter on a page[C]边,边缘 edge or border[C]差数,差额; 余地 an amount
+    by which one thing is greater than another
   </div>
 
   <div class="box">
     <div class="box1">box1</div>
     <div class="box2" id="box">box2</div>
-   
+
   </div>
   <span>内联元素1</span>
   <span>内联元素2</span>
@@ -181,9 +201,48 @@
     <!-- <em>hh</em> -->
     <!-- <br /> -->
   </div>
+
+  <div class="icon-wrap">
+    <img src="./icon.jpg" alt="">
+    在生命辉煌圣殿上
+    曾留下自己的仰望
+    谁真的甘于无声的消亡
+    平凡世界平凡的他
+    固执或过于理想化
+    有梦想的人渺小却伟大
+
+    一路上困惑和挣扎
+    我陪你说一路真心的话
+    把嘲弄当做个笑话
+    时间会给出最好的回答
+    别去想它世界很大勇敢去表达
+
+    抬头仰望不知方向
+    就低头前往心灵归宿的地方
+    看一本书做一场梦
+    一次别离或是重逢
+    都是人生赐给你的恩宠
+    平凡世界平凡的她
+    平凡的相信着童话
+    平凡的我们渺小却伟大
+
+    一路上困惑和挣扎
+    为你打call说出真心的话
+    把嘲弄当做个笑话
+    时间会给出最好的回答
+    别去想它世界很大勇敢去表达
+
+    一路上狂欢和繁华
+    为你打call说出真心的话
+    那通往梦想的地方
+    最终会改变世界的形状
+    世界很大在你脚下勇敢去表达
+    浩瀚宇宙人若蜉蝣
+    虽然渺小却很伟大
+  </div>
 </body>
 <script>
-console.log(document.getElementById('box').offsetHeight);
+  console.log(document.getElementById('box').offsetHeight);
 
 </script>
 

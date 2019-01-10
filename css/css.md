@@ -16,7 +16,9 @@
  3. 控制动画的速度变化
  4. 动画是否延迟执行
 #### 两个div 之间为什么会有空格
- display: inline-block 导致 解决办法设置 ``font-size: 0(在父元素上设置font-size) || float: left;``
+ display: inline-block 导致, dom换行会解析空格,如果不进行换行，是不会出现空隙的
+ 
+   解决办法设置 ``font-size: 0(在父元素上设置font-size) || float: left;``
 
 #### 标准的盒模型与怪异盒模型
 
@@ -69,6 +71,8 @@ border background margin padding font[font-style font-weight font-size/line-heig
 
 #### float的清除浮动
 
+  浮动最开始是用来做图文环绕的, 其原理是破坏结构当中的line-box,造成的影响是不会撑开父级的高度
+
 1. 为什么需要清除浮动呢？
   因为浮动会脱离文档流，而且比父级元素高半层级，使得父级元素无法包住浮动元素，破坏了布局
 2. 如何清除浮动
@@ -101,7 +105,10 @@ border background margin padding font[font-style font-weight font-size/line-heig
 
 #### BFC 和 haslayout
 
-- BFC **满足一下的css声明，才会产生BFC**
+- BFC (block fromatting content 块级格式化上下文)**满足一下的css声明，才会产生BFC**
+
+  是一套渲染机制，其主要作用是触发一个元素的BFC,相当于在元素里面建立起一堵围墙,使得围墙里面的内容和围墙外面的内容不会互相干扰
+
     1. 根元素
     1. float的值不为none
     1. overflow的值是 不为visible
