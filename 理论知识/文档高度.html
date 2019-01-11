@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+</head>
+<style>
+  body {
+    position: relative;
+  }
+#box {
+  width: 100px;
+  height: 3000px;
+  padding: 10px;
+  margin: 10px;
+  background-color: red;
+  border: 1px solid black;
+  /* box-sizing: border-box; */
+}
+#btn  {
+  position: absolute;
+  left: 300px;
+  top:500px;
+}
+</style>
+<body>
+  <div>
+    <div id="box">
+      12
+    </div>
+    <button id="btn">GET</button>
+  </div>
+  <script>
+    window.onload = function() {
+    
+      console.log('/***************获取可视区域的宽高*******************/')
+      console.log(document.documentElement.clientWidth, document.documentElement.clientHeight );
+      console.log('/***************获取body的宽高*******************/')
+      console.log(document.body.clientWidth, document.body.clientHeight)
+      
+     
+      
+      document.getElementById("btn").onclick = function() {
+        console.log('/***************获取滚动*******************/')
+        console.log(document.documentElement.scrollTop);
+
+        console.log('/***************内容高度*******************/')
+        console.log(document.getElementById('box').scrollHeight);
+        console.log(document.getElementById('box').offsetHeight)
+      }
+    }
+
+</script>
+</body>
+<!-- <script src="./test.js"></script> -->
+
+</html>
