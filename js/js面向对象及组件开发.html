@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js面向对象及组件开发</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  // 第一种
+  var a = 1; var b = a; b = 2; console.log(a, b);
+  var a1 = [1, 2, 3]; var b1 = a1; b1.push(4); console.log(a1, b1);
+  var a2 = [1, 2, 3]; var b2 = a2; b2 = [1, 2, 3, 4]; console.log(a2, b2);
+
+  var a3 = 5, b3 = 5; console.log(a3 == b3, a3 === b3);
+  var a4 = [1, 2, 3], b4 = [1, 2, 3]; console.log(a4 == b4, a4 === b4);
+
+  var arr = [1, 2, 3, 4, 5];
+  Array.prototype.sum = function () {
+    console.log(this)
+  }
+  // arr.sum();
+  console.log(arr);
+
+  console.log('/***************************************/')
+  console.log(this, 'window'); // this指向的是window
+
+  var obj = {
+    name: 'zhu',
+    fn: (function () {
+      console.log(this, 'fn1')
+      return function () {
+        console.log(this, 'fn2')
+      }
+    }),
+    set: (function () {
+      console.log('set');
+      console.log(this, 'set1');
+      setTimeout(function () {
+        console.log(this, 3);
+        // return function() {
+        //   console.log(this, 4);
+        // }()
+      }, 1000)
+    })
+  }
+
+  obj.fn()();
+  obj.set();
+</script>
+
+</html>
