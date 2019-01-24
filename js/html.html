@@ -7,27 +7,8 @@
   <title>Document</title>
 </head>
 <body>
-  <div>/******************双向绑定***********************/</div>
-  <input type="text" placeholder="value" id="test" value="ss">
-  <div id="show"></div>
+  
 </body>
 <script src="./获取数组中的最大，最小值以及常用数组的操作.js"></script>
-<script src="./双向绑定.js"></script>
-<script>
-  var showDom = document.getElementById('show'), inputDom = document.getElementById('test');
-  var obj = {name: 'hhhh'};
-  var show = function(v) {
-    inputDom.value = v;
-    showDom.innerHTML = v;
-  }
 
-  bind(obj, 'name', obj.name);
-  
-  show( obj.name) // 双向绑定已经搞定了第一步。现在将这段代码改成 发布/订阅者模式
-
-  inputDom.addEventListener('keyup', function(e) {
-     obj.name = e.target.value;
-     show(obj.name);
-  })
-</script>
 </html>
