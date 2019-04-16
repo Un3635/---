@@ -1,4 +1,5 @@
 ### vue 双向绑定的原理
+  
 ### vuex的使用
     问题：为什么需要使用vuex， 直接全局设置有什么不同
 
@@ -29,3 +30,41 @@
 * updated
 
 *一般数据请求和耗时操作放在created中，如果有依赖dom的操作就放在mounted中*
+
+### vue全局监听路由
+* 在app.vue 中监听`$route`
+* 在vue的beforeRoute中进行监听
+* axios中进行监听
+
+
+### vue知识点
+* 子组件中是可以修改prop中的值，只是会发生警告
+* 为什么需要使用单向数据流，防止子组件篡改数据，导致数据流难以理解
+* 父子组件之间的通信
+  1. props
+  1. 单向改成双向数据流：
+    *场景: 父组件传参给子组件，子组件可以改变数据*
+    * 第一种方法 sync的双向绑定
+      ```
+        // 父组件 show = true
+        <div 
+        :app-show.sync="show"
+        ></div>
+        // 子组件
+        props: {
+          appShow: {
+            type: Boolean
+          }
+        },
+        methods: {
+          change() { 
+            // change方法中可以直接更改父组件的数据
+            this.$emit('update:appShow', false);
+          }
+        }
+
+      ```
+    * 第二种方法 v-model （传入值，监听input的值）
+  1. 兄弟组件之间的通信
+    *状态提升*
+    * 使用 event bus,可以使用 $root，提供emit和on的shijian，但是其有一个弊端，谁都发布事件，导致最后的调试出现问题

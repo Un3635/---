@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+ul{
+  list-style: none;
+}
+ul > li {
+  height: 40px;
+}
+</style>
+<body>
+  <ul id="ul">
+    <li>
+      <p>1</p>
+    </li>
+    <li>
+      <div>2</div>
+    </li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</body>
+<script>
+var ul = document.getElementById('ul');
+// ul.onclick = function(ev) {
+//   var target = ev.target;
+//   console.log(target.tagName)
+//   if(target.tagName.toLowerCase() === "li") {
+//     console.log(target);
+//   }
+// }
+ul.addEventListener('click', function(ev) {
+  var target = ev.target;
+  console.log(target.tagName)
+  if(target.tagName.toLowerCase() === "li") {
+    console.log(target);
+  }
+})
+</script>
+</html>

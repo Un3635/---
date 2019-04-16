@@ -18,8 +18,13 @@ const body = {
   }
 }
 const arr = [1, 2, 3];
-const {head: head_, person: {name, pwd}} = body;
-console.log(head_, name, pwd);
+const {head, person: {name, pwd}} = body;
+console.log(head, name, pwd);
 console.log(...arr);
+
+console.log('/***两个数交换位置***/');
+var p1 = 1, p2 = 2;
+[p1, p2] = [p2, p1];
+console.log(p1, p2);
 </script>
 </html>

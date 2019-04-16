@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的遍历</title>
+</head>
+<body>
+ <ul>
+   <li>*: 在Vue的项目中，将需要显示的数据处理完成之后，再赋值到可渲染的数据上</li>
+   <li>vue的深层级的响应 ？ </li>
+   <li>[].concat 为什么使用</li>
+   <li>如何创建一个对象， <br/>
+      场景： 需要对键进行操作的时候，每次都需要重新创建一个{}, <br/>
+      结果：目前并没有找到其他方法，可以选择在操作的过程中就对键处理好
+  </li>
+   <li>Map 遍历对象 <br/>
+    问题： 只有for in,
+    结果： 可以选择 Object.keys() 或者 Object.values()
+   </li>
+   <li>交换数组<br/>
+    场景：1.vue层级太深，对数据修改的时候，页面并没有及时响应 <br/>
+          2. 数据的深拷贝 <br/>
+    结果：1. 使用vue中的set()方法, 待测 <br/>
+        2. 先将数据置空，此时就需要交换数据，
+  </li>
+  <li>Object.assign( map, map2 )<br/>
+    map 与 map2结合，不同的数据结合，相同的数据，map2覆盖map<br/>
+    场景： 可以用于编辑的，不一定提前将数据设置在结果集中
+  </li>
+
+ </ul>
+</body>
+<script>
+
+let map = {
+  one: { name: 'fish', type: 'aquatic', info: { sex: '1' }},
+  two: { name: 'bird', age: 'bird'}
+};
+let arr = [];
+Object.keys(map).map( i1 => {
+  let i = i1 + 'reiki';
+  arr.push(map[i1])
+})
+
+// console.log(arr, 'arr')
+
+let map1 = map;
+let map2 = {
+  three: { name: 'fish1', type: 'aquatic', age: 1},
+};
+map.one.info.sex = '2';
+map1 = {}
+// Object.assign( map, map2)
+console.log(map, 'map');
+console.log(map1, 'map1');
+
+// 数据交换位置
+// console.log(map2, 'map2');
+let map3 = {};
+[map3, map] = [map, map3]
+map3.one.name = 'z'
+console.log(map, 'map');
+console.log(map1, 'map1');
+console.log(map3, 'map3');
+
+</script>
+</html>
