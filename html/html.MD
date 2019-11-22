@@ -23,4 +23,5 @@ h1 32px; h2 24px; h3 ~19px; h4 16px; h5 13px; h6 12px;
     </div>
 
     ```
+  - label 扩大点击范围，点击label的时候，其后面的事件也会被响应
 

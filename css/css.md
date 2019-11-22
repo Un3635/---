@@ -67,8 +67,9 @@ border background margin padding font[font-style font-weight font-size/line-heig
 5. float: 相对父元素， 有四个值 left | right | none | inherit``[ɪnˈherɪt]``
     - 脱离文档；
     - 提升层级半层
+    - 用途：图文环绕
    
-
+6. *设置了absoulte,relative, fixed 之后才可以设置top, z-index等属性*
 #### float的清除浮动
 
   浮动最开始是用来做图文环绕的, 其原理是破坏结构当中的line-box,造成的影响是不会撑开父级的高度

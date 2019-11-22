@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>float</title>
+  </head>
+  <style>
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .wrap {
+      width: 150px;
+      height: 150px;
+    }
+    .wrap > img {
+      width: 100px;
+      height: 100px;
+      float: left;
+    }
+    .parent {
+      width: 300px;
+      background: green;
+    }
+    .parent > div {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+    .parent > div:first-child {
+      float: left;
+    }
+  </style>
+  <body>
+    <div class="wrap clearfix">
+      <img src="../../icon.jpg" alt="图片">
+      <div class="content">
+        生命在于精致生命在于精致生命在于精致生命在于精致
+      </div>
+    </div>
+    
+    <div class="parent">
+      <div class="child1" style="background: red;"></div>
+      <div class="child2" style="background: black;"></div>
+      <div class="child3" style="background: blue;"></div>
+    </div>
+  </body>
+</html>
