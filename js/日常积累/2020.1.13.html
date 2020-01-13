@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1. 问题一， 在回调函数中使用await</li>
+        <li>2. 命名函数，不能使用this</li>
+        <li>3. 箭头函数中 命名函数，匿名函数的this的指向不一样</li>
+        <li>4. 箭头函数根本没有自己的this，导致内部的this就是外层代码块的this</li>
+    </ul>
+</body>
+<script>
+    window.onload = function() {
+        const obj = {
+            getNumber: () => {
+                return Promise.resolve('当前值是： 1')
+            },
+            getName() {
+
+            return Promise.resolve('当前值是： 2')  
+            },
+            async get() {
+
+           await this.getNumber().then(  data => {
+               // 1. 在第一个问题中，data前面可以加一个async 在进行加上await
+               console.log(data, 'data')
+               console.log(this, 'this')
+               const get = () => { //并不是 因为你是匿名 函数，所有存在this，而是因为是箭头函数，所以this就是外部的this
+                   console.log(this, 'get')
+               }
+               const reset = function() { //匿名函数，不适用上述方法，this指向的也是 window
+                   console.log(this, 'reset')
+               }
+               function set() {
+                    console.log(this, 'set')
+                }
+                function aa() {
+                    console.log(this, 'aa')
+                }
+                
+                
+                let res =  this.getName(); // 上面箭头函数加上了async，此时这里可以加上await
+            console.log(res, 're')
+                res.then( d => {
+                    console.log(d, 'ddd', this);
+                    set.call(this); // 使用call 或者apply 或者bind(this) 或者直接使用具体的对象名
+                    get();
+                    reset.apply(this);
+                    return d;
+                }).then( function ( v) {
+                    console.log(v, 'vvv', this)
+                    set.bind(this)();
+                    get();
+                }.bind(this))
+                
+
+                    console.log('当前值是： 3')
+                })
+                console.log('当前值是：0')
+            }
+
+        }
+      
+      
+       obj.get();
+    //    window.set();
+    // text1();
+    // window.text1();
+    }
+    // function text1() {
+    //         console.log('ttt', window);
+    //     }
+        // window.set();
+</script>
+</html>
