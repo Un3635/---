@@ -1,0 +1,121 @@
+<!--
+ * @Description: 
+ * @Author: reiki.z
+ * @Date: 2020-05-24 17:48:50
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #text {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+  }
+</style>
+<body>
+  <button id="btn">点击</button>
+  <div id="text"></div>
+  <h2>所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间</h2>
+  <h2>所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数。节流会稀释函数的执行频率</h2>
+</body>
+<script>
+  let num = 0, content = document.getElementById('text'), timerT = null;
+  // document.getElementById("btn").onclick = function() {
+  //   count()
+  // }
+  // document.getElementById("btn").onclick = debounce(count, 1000);
+  // document.getElementById("btn").onclick = throttle1(count, 1000);
+  document.getElementById("btn").onclick = function() {
+    count();
+  }
+  // document.getElementById("btn").onclick = function() {
+  //   console.log(this)
+  //   // debounce(count, 1000);
+  // }
+  function count() {
+    console.log(this)
+      this.innerHTML = num++;
+  };
+
+function openTimer() {
+  // if(timerT)
+}
+  // function debounce( cb, time ) {
+  //   let timer = null;
+  //   console.log(1)
+  //   return function() {
+  //     console.log(timer, 'ttt')
+  //     if(timer) clearTimeout(timer);
+  //     timer = setTimeout( () => {
+  //       cb();
+
+  //     }, time)
+  //   }
+  // }
+  /**
+ * @desc 函数防抖
+ * @param func 函数
+ * @param wait 延迟执行毫秒数
+ * @param immediate true 表立即执行，false 表非立即执行
+ */
+  function debounce(func, wait, immediate) {
+    let timeout;
+   
+    return function () {
+        let context = this;
+        let args = arguments;
+
+        if (timeout) clearTimeout(timeout);
+        if(immediate) {
+          let _timeOut = !timeout;
+          timeout = setTimeout(() => {
+            timeout = null;
+          }, wait);
+          console.log(_timeOut)
+          if(_timeOut)  func.apply(content, args)
+        } else {
+          timeout = setTimeout(function(){
+            func.apply(content, args)
+          }, wait);
+        }
+        
+    }
+}
+
+// 时间戳
+function throttle(func, wait) {
+    let previous = 0;
+    return function() {
+        let now = Date.now();
+        let context = this;
+        let args = arguments;
+        if (now - previous > wait) {
+            func.apply(content, args);
+            previous = now;
+        }
+    }
+}
+// 定时器
+function throttle1(func, wait) {
+    let timeout;
+    return function() {
+        let context = this;
+        let args = arguments;
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                timeout = null;
+                func.apply(content, args)
+            }, wait)
+        }
+
+    }
+}
+
+  
+</script>
+</html>

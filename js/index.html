@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+var b = {name: '1'}
+console.log(b.hasOwnProperty("name"));
+
+const a = new Object();
+a.name = '122';
+console.log(a.hasOwnProperty("name"))
+
+const object1 = new Object();
+object1.property1 = 42;
+console.log(object1.hasOwnProperty('property1'));
+
+console.log({name: '122'}.hasOwnProperty("name"))
+</script>
+</html>

@@ -182,7 +182,7 @@ console.log('find-arr4', arr4, arr); // arr4 是找到第一个符合条件 之�
 
 // some
 var arr5 = arr.some(item => {
-  // if(item > 10) return item;
+  if(item > 10) return item;
   return item;
 })
 console.log('some-arr5', arr5, arr); // arr5  只要有一个满足条件就返回true， 否则就是 false

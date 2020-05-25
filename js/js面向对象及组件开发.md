@@ -35,4 +35,4 @@
 #### this的指向问题
    在事件和定时器的情况下 比较容易出现this的指向问题
    * ``console.log(this); // this指向的是window`` 方法是谁调用的，this就指向谁，如果方法是自执行或者是没有对象调用，this指向的是window
-   * 
+   * 闭包中this指向全局对象，new 中指向本身
