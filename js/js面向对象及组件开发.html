@@ -1,3 +1,8 @@
+<!--
+ * @Description: 
+ * @Author: reiki.z
+ * @Date: 2019-07-10 17:35:17
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +14,10 @@
 </head>
 
 <body>
-
+<div onclick="test">跨站脚本攻击</div>
 </body>
 <script>
-
+  function test(){}
   // 第一种
   var a = 1; var b = a; b = 2; console.log(a, b);
   var a1 = [1, 2, 3]; var b1 = a1; b1.push(4); console.log(a1, b1);

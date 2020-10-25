@@ -131,6 +131,7 @@ border background margin padding font[font-style font-weight font-size/line-heig
    1. 清楚浮动 ``.clear:after {content: ''; display: block; clear: both}``
    1. 计数器 详见 css/计数器.html
 
+https://mp.weixin.qq.com/s/awBqvJmqWc7JGxwgB0QQZA
 
 #### css reset 和 normalize.css
 因为一些样式是浏览器特有的样式，但由于一些样式的在不同的浏览器上的显示不同，所以需要清楚比如 与盒模型相关的 margin padding border; 标签特有的样式： ul > li; ol > li img 在ie6 上有一定的蓝边和空隙 img{border: none; verter-algin: top}a 标签 a {}
